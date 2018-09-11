@@ -4,6 +4,6 @@ var mlab = 'mongodb://udemycourse1:b0shk4b1sd3n4@ds163842.mlab.com:63842/udemy-t
 var local = 'mongodb://localhost:27017/TodoApp'
 
 mongoose.Promise = global.Promise;
-mongoose.connect(local);
+mongoose.connect(mlab);
 
 module.exports = {mongoose};
