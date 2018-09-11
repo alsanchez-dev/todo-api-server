@@ -41,6 +41,26 @@ const {User} = require('./../server/models/user');
 //     console.log(e)
 // });
 
+// var databaseEntry = new Todo({
+//     text: 'This is a second todo for the mlab database'
+// });
+// databaseEntry.save().then((todo)=>{
+//     console.log('This has been saved :D', todo);
+// }).catch((e)=>{
+//     console.log(e)
+// });
+
+// var todayTodo = new Todo({
+//     text: 'Ask Boshka how is everything going'
+// });
+//
+// todayTodo.save().then((param)=>{
+//     console.log('new todo added', param);
+// }).catch((e)=>{
+//     console.log(e);
+// })
+
+
 User.findById('5ba1b711a33cabc4dee8445b').then((user)=>{
     if(!user){
         return console.log('Unable to find user');

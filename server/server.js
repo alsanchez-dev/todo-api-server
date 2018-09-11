@@ -47,16 +47,26 @@ Todo.findById(id).then((todo)=>{
 }).catch((e)=>{
     res.status(400).send();
 });
-    // valid id using isValid
-    // 404 - send back empaty body
-
-    // findById
-    // success
-    // if todo - send it back
-    // if no todo - send back 404 with empty body
-    // error
-    // 400 -
 });
+// Deletes by id
+app.delete('/todos/:id', (req, res)=>{
+    var id = req.params.id;
+
+if(!ObjectID.isValid(id)){
+    return res.status(404).send();
+}
+
+Todo.findByIdAndRemove(id).then((todo)=>{
+    if(!todo){
+        return res.status(404).send();
+    }
+    res.send({todo});
+}).catch(()=>{
+    res.status(400).send();
+});
+
+});
+
 
 app.listen(port, ()=>{
     console.log(`Started up at the port ${port}`);
