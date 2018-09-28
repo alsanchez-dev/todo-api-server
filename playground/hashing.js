@@ -5,18 +5,18 @@ const bcrypt = require('bcryptjs');
 
 var password = 'abc123!';
 
-// bcrypt.genSalt(10, (err, salt)=>{
-//     bcrypt.hash(password, salt, (error, hash)=>{
-//         console.log(hash);
-//     });
-// });
-
-
-var hashPassword = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmE4NmI3ZTcwMThiYjgwNjA4ZWU5OTciLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTM3NzY0MjIyfQ.HjeOEQseP1gxjEGk3MHQsczcUbZqAd03pBPt66CLzLo';
-
-bcrypt.compare(password, hashPassword, (err, res)=>{
-    console.log(res);
+bcrypt.genSalt(10, (err, salt)=>{
+    bcrypt.hash(password, salt, (error, hash)=>{
+        console.log(hash);
+    });
 });
+
+
+// var hashPassword = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmE4NmI3ZTcwMThiYjgwNjA4ZWU5OTciLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTM3NzY0MjIyfQ.HjeOEQseP1gxjEGk3MHQsczcUbZqAd03pBPt66CLzLo';
+//
+// bcrypt.compare(password, hashPassword, (err, res)=>{
+//     console.log(res);
+// });
 // var data = {
 //     id: 10
 // };
